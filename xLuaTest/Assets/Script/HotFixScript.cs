@@ -9,9 +9,21 @@ public class HotFixScript : MonoBehaviour {
 
     private LuaEnv LuaEnv;
 
-    
+    private static HotFixScript hotFix;
 
-	void Awake()
+    public static HotFixScript HotFix
+    {
+        get
+        {
+            return hotFix;
+        }
+    }
+    private HotFixScript()
+    {
+        hotFix = this;
+    }
+
+    public void DoLuaStart()
     {
         LuaEnv = new LuaEnv();
         LuaEnv.AddLoader(MyLoader);
@@ -20,7 +32,7 @@ public class HotFixScript : MonoBehaviour {
 	
 	private byte[] MyLoader(ref string filePath)
     {
-        string absPath = @"C:\05_Unity\01_GameProject\06_xLuaFrameSample\xLuaSampleFrame\SimpleTest\SimpleTest\PlayerGamePackage\" + filePath + ".lua.txt";
+        string absPath = @"D:\MyProject\1_Game\14_xlua\xLuaSampleFrame\PlayerGamePackage\" + filePath + ".lua.txt";
         return System.Text.Encoding.UTF8.GetBytes(File.ReadAllText(absPath));
     }
 

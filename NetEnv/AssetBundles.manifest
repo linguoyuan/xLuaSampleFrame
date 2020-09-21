@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 1376740975
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: box/1.ab
+      Dependencies: {}
+    Info_1:
+      Name: box/2.ab
+      Dependencies: {}
