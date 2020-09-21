@@ -1,0 +1,16 @@
+local UnityEngine = CS.UnityEngine
+
+xlua.hotfix(CS.ButtonClick, 'OnButtonClick', function(self)
+	self.textObj.text = 'you use lua OnButtonClick'
+end)
+
+--local uLoadResource = UnityEngine.GameObjcet.Find('LoadResource')
+--local uGetGameObjcet = UnityEngine.GameObjcet.Find('GetGameObjcet')
+
+xlua.hotfix(CS.ButtonClick, 'MyLoadResource', function(self)
+	--CS.ButtonClick.LoadResource('BoxImage1', "2.ab")
+	local go = self:GetGameObjcet('BoxImage1')
+	if go ~= nil then
+		UnityEngine.GameObject.Instantiate(go, self.Cav.transform)
+	end
+end)

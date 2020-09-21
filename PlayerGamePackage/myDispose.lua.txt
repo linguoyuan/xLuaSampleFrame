@@ -1,0 +1,5 @@
+﻿
+xlua.hotfix(CS.ButtonClick,'OnButtonClick',nil)
+xlua.hotfix(CS.ButtonClick,'MyLoadResource',nil)
+xlua.hotfix(CS.ButtonClick,'LoadResource',nil)
+
